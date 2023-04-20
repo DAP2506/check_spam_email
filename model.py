@@ -52,3 +52,16 @@ def result(msg):
         return "This is a Spam mail"
     else:
         return "This is not a Spam mail"
+
+
+def csv_result(csv):
+    # print("FROM model: ")
+    # print(csv[0])
+    # my_prediction = model.predict(csv)
+    res = [[]]
+    for msg in csv:
+        temp = []
+        temp.append(msg)
+        temp.append(result(msg))
+        res.append(temp)
+    return res
