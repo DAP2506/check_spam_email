@@ -48,6 +48,8 @@ if uploaded_file is not None:
         if mails.size != 0 or uploaded_file:
             check = csv_result(mails)
             st.write(check)
+            df = pd.DataFrame(check)
+            df.to_csv('result.csv', index=False, header=False)
 
 else:
     submit = st.button('Show Result')
